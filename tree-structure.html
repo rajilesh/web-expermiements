@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .event_tree{
+            display: block;
+        }
+
+/** For Border **/
+        .event_tree:after{
+            content: "";
+            position: absolute;
+            right:0px;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            left: 50%;
+            height: 100%;
+            margin-left: 30px;
+            border-right: 1px solid rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .event_tree .event_branch{
+            width: 50%;
+            display: block;
+            position: relative;
+            min-height: 100px;
+            margin: 10px;
+            clear: both;
+        }
+        
+        
+        .event_tree .event_branch .event_content{
+            background-color: rgb(182, 136, 136);
+            padding: 10px;
+        }
+
+
+        .event_tree .event_branch .icon_1{
+            content:"";
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background-color: #0f0;
+            z-index: 2;
+
+            /** for hiding text **/
+            overflow: hidden;
+            text-indent: 999px;
+            white-space: nowrap;
+        }
+        .event_tree .event_branch .icon_2{
+            content:"";
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: rgb(22, 129, 190);
+            top:60px;
+            z-index: 2;
+
+            /** for hiding text **/
+            overflow: hidden;
+            text-indent: 999px;
+            white-space: nowrap;
+        }
+        .event_tree .left_branch{
+            float: left;
+            /* background-color: #f00; */
+            
+        }
+        
+        .event_tree .left_branch .icon_1{
+            right: -25px;
+            background-color: rgb(203, 236, 11);
+        }
+        .event_tree .left_branch .icon_2{
+            right: -15px;
+            background-color: rgb(236, 45, 11);
+        }
+        .event_tree .right_branch{
+            float: right;
+            /* background-color: #00f; */
+            
+        }
+        .event_tree .right_branch .icon_1{
+            left:-5px;
+        }
+        .event_tree .right_branch .icon_2{
+            left:5px;
+        }
+
+        .event_tree .left_branch .event_content{
+            margin: 10px 50px 10px 10px;
+        }
+
+        .event_tree .right_branch .event_content{
+            margin: 10px 10px 10px 50px;
+        }
+    </style>
+
+    <ul class="event_tree">
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+
+            <div class="event_content">asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd 
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd
+                asdasdasd asdasdasd asdasdasd asdasdasd asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd
+            </div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch right_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+        <li class="event_branch left_branch">
+            <i class="icon_1">icon 1</i>
+
+            <i class="icon_2">icon 1</i>
+            <div class="event_content">asdasdasd</div>
+        </li>
+    </ul>
+</body>
+</html>
